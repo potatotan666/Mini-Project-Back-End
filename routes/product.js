@@ -6,18 +6,18 @@ const middleware = require("../middlewares/middleware");
 const modelProduct = require("../models/modelProduct");
 
 // Get all products data
-router.get("/", middleware.checkAuth, modelProduct.getAllProducts);
+router.get("/", middleware.checkAuth, controllerProduct.getAllProducts);
 
 // Post new products
 router.post("/", middleware.checkAuth, controllerProduct.PostNewProduct);
 
 // Update product quantity
-router.put("/:id/quantity", modelProduct.updateQuantity);
+router.put("/:id/quantity", controllerProduct.updateQuantity);
 
 // Update product price
-router.put("/:id/price", modelProduct.updatePrice);
+router.put("/:id/price", controllerProduct.updatePrice);
 
 // Delete product
-router.delete("/:id", modelProduct.deleteProduct);
+router.delete("/:id", controllerProduct.deleteProduct);
 
 module.exports = router;

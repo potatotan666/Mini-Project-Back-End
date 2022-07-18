@@ -18,7 +18,7 @@ class modelProduct {
       [body.name, body.quantity, body.price, body.created_by, body.updated_by],
       function (err) {
         if (err) {
-          console.log(err);
+          // console.log(err);
         }
       }
     );
@@ -33,7 +33,6 @@ class modelProduct {
         console.log(err);
       }
     });
-    res.status(200).json({ message: "Success updating quantity!" });
   }
   static updatePrice(req, res, next) {
     const body = req.body;
@@ -45,7 +44,6 @@ class modelProduct {
         console.log(err);
       }
     });
-    res.status(200).json({ message: "Success updating price!" });
   }
   static deleteProduct(req, res, next) {
     const query = "DELETE from product WHERE id = ?";
@@ -56,7 +54,6 @@ class modelProduct {
         console.log(err);
       }
     });
-    res.status(200).json({ message: "Success deleting product!" });
   }
 }
 
