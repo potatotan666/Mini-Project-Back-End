@@ -1,9 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const db = require("../config/db");
 const controllerProduct = require("../controllers/controllerProduct");
 const middleware = require("../middlewares/middleware");
-const modelProduct = require("../models/modelProduct");
 
 // Get all products data
 router.get("/", middleware.checkAuth, controllerProduct.getAllProducts);
@@ -12,12 +10,16 @@ router.get("/", middleware.checkAuth, controllerProduct.getAllProducts);
 router.post("/", middleware.checkAuth, controllerProduct.PostNewProduct);
 
 // Update product quantity
-router.put("/:id/quantity", controllerProduct.updateQuantity);
+router.put(
+  "/:id/quantity",
+  middleware.checkAuth,
+  controllerProduct.updateQuantity
+);
 
 // Update product price
-router.put("/:id/price", controllerProduct.updatePrice);
+router.put("/:id/price", middleware.checkAuth, controllerProduct.updatePrice);
 
 // Delete product
-router.delete("/:id", controllerProduct.deleteProduct);
+router.delete("/:id", middleware.checkAuth, controllerProduct.deleteProduct);
 
 module.exports = router;
