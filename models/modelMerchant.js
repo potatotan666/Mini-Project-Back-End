@@ -45,7 +45,6 @@ class modelMerchant {
         }
       }
     );
-    res.status(201).json({ message: "Success create new data!" });
   }
   static deleteMerchant(req, res, next) {
     const query = "DELETE from merchant WHERE id = ?";
@@ -56,14 +55,13 @@ class modelMerchant {
         console.log(err);
       }
     });
-    res.status(200).json({ message: "Success delete new data!" });
   }
-  static updateMerhant(req, res, next) {
+  static updateMerhantPassword(req, res, next) {
     const queryGet = `SELECT * FROM merchant WHERE id = ?`;
     const query = `UPDATE merchant SET password = ? WHERE id = ?`;
     const userId = req.params.id;
     const body = req.body;
-    const errCheck = db.all(queryGet, [userId], (err, result) => {
+    db.all(queryGet, [userId], (err, result) => {
       console.log(result);
       if (result.length == 0) {
         res.status(404).json({ message: "Data not found!" });

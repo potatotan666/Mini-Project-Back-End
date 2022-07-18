@@ -8,17 +8,18 @@ const controllerMerchant = require("../controllers/controllerMerchant");
 router.post("/login", controllerMerchant.login);
 
 // Get all merchant data
-router.get("/", modelMerchant.getMerchant);
+router.get("/", controllerMerchant.getMerchant);
 
 // Get merchant info by name
-router.get("/:id", modelMerchant.getMerchantInfoByName);
+router.get("/:id", controllerMerchant.getMerchantInfoByName);
 
 // Update merchant data
-router.put("/password/:id", modelMerchant.updateMerhant);
+router.put("/password/:id", controllerMerchant.updateMerchantPassword);
+
 // Post new merchant
-router.post("/", modelMerchant.postMerchant);
+router.post("/", controllerMerchant.postMerchant);
 
 // Delete merchant
-router.delete("/:id", modelMerchant.deleteMerchant);
+router.delete("/:id", controllerMerchant.deleteMerchant);
 
 module.exports = router;

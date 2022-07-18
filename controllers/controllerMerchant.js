@@ -16,6 +16,23 @@ class controllerMerchant {
       res.status(401).json({ message: "Unauthorized" });
     }
   }
+  static getMerchant(req, res, next) {
+    modelMerchant.getMerchant(req, res, next);
+  }
+  static getMerchantInfoByName(req, res, next) {
+    modelMerchant.getMerchantInfoByName(req, res, next);
+  }
+  static postMerchant(req, res, next) {
+    modelMerchant.postMerchant(req, res, next);
+    res.status(201).json({ message: "Success create new data!" });
+  }
+  static deleteMerchant(req, res, next) {
+    modelMerchant.deleteMerchant(req, res, next);
+    res.status(200).json({ message: "Success delete new data!" });
+  }
+  static updateMerchantPassword(req, res, next) {
+    modelMerchant.updateMerchantPassword(req, res, next);
+  }
 }
 
 module.exports = controllerMerchant;
