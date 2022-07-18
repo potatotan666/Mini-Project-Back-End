@@ -10,11 +10,7 @@ class modelProduct {
       res.status(200).json(row);
     });
   }
-  static postNewProducts(req, res, next) {
-    const body = req.body;
-    if (body.name == null) {
-      res.status(400).json({ message: "Name is required" });
-    }
+  static postNewProducts(body) {
     const query =
       "INSERT INTO product (name, quantity, price, created_by, updated_by) VALUES (?,?,?,?,?)";
     db.run(
@@ -26,7 +22,6 @@ class modelProduct {
         }
       }
     );
-    res.status(201).json({ message: "Success create new product!" });
   }
   static updateQuantity(req, res, next) {
     const body = req.body;
