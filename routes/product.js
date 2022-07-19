@@ -2,6 +2,8 @@ const express = require("express");
 const router = express.Router();
 const controllerProduct = require("../controllers/controllerProduct");
 const middleware = require("../middlewares/middleware");
+const modelMerchant = require("../models/modelMerchant");
+const modelProduct = require("../models/modelProduct");
 
 // Get all products data
 router.get("/", middleware.checkAuth, controllerProduct.getAllProducts);
@@ -11,13 +13,13 @@ router.post("/", middleware.checkAuth, controllerProduct.PostNewProduct);
 
 // Update product quantity
 router.put(
-  "/:id/quantity",
+  "/quantity/:id",
   middleware.checkAuth,
   controllerProduct.updateQuantity
 );
 
 // Update product price
-router.put("/:id/price", middleware.checkAuth, controllerProduct.updatePrice);
+router.put("/price/:id", middleware.checkAuth, controllerProduct.updatePrice);
 
 // Delete product
 router.delete("/:id", middleware.checkAuth, controllerProduct.deleteProduct);

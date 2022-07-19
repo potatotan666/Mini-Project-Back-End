@@ -1,4 +1,5 @@
 const jwt = require("jsonwebtoken");
+const db = require("../config/db");
 const modelProduct = require("../models/modelProduct");
 const Product = require("../models/modelProduct");
 
@@ -16,16 +17,31 @@ class controllerProduct {
     res.status(201).json({ message: "Success create new product!" });
   }
   static updateQuantity(req, res, next) {
-    modelProduct.updateQuantity(req, res, next);
-    res.status(200).json({ message: "Success updating quantity!" });
+    req.user = jwt.verify(req.headers.authorization, "shhhhh");
+    if (req.user.user.id != req.params.id) {
+      res.status(401).json({ message: "Unauthorized!" });
+    } else {
+      modelProduct.updateQuantity(req, res, next);
+      res.status(200).json({ message: "Success updating quantity!" });
+    }
   }
   static updatePrice(req, res, next) {
-    modelProduct.updatePrice(req, res, next);
-    res.status(200).json({ message: "Success updating price!" });
+    req.user = jwt.verify(req.headers.authorization, "shhhhh");
+    if (req.user.user.id != req.params.id) {
+      res.status(401).json({ message: "Unauthorized!" });
+    } else {
+      modelProduct.updatePrice(req, res, next);
+      res.status(200).json({ message: "Success updating price!" });
+    }
   }
   static deleteProduct(req, res, next) {
-    modelProduct.deleteProduct(req, res, next);
-    res.status(200).json({ message: "Success deleting product!" });
+    req.user = jwt.verify(req.headers.authorization, "shhhhh");
+    if (req.user.user.id != 1) {
+      res.status(401).json({ message: "Unauthorized!" });
+    } else {
+      modelProduct.deleteProduct(req, res, next);
+      res.status(200).json({ message: "Success deleting product!" });
+    }
   }
 }
 

@@ -1,4 +1,5 @@
 const jwt = require("jsonwebtoken");
+const db = require("../config/db");
 class middleware {
   static checkAuth(req, res, next) {
     if (!req.headers || !req.headers.authorization) {
