@@ -16,7 +16,7 @@ router.get(
   controllerMerchant.getMerchantInfoByName
 );
 
-// Update merchant data
+// Update merchant password
 router.put(
   "/password/:id",
   middleware.checkAuth,

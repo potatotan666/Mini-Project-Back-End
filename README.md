@@ -96,3 +96,79 @@ Return specified merchant by name
     phone_number : string
 }
 ```
+
+# PUT /merchant/password/:id
+
+---
+
+Updating merchant password
+
+- **URL Params**  
+  Required: `id=int`
+- **Data Params**  
+  None
+- **Headers**  
+  Content-Type: application/json  
+  Authorization: Bearer `<OAuth Token>`
+- **Success Response:**
+- **Code:** 200  
+  **Content:**
+- **Error Respons:"**
+- **Code:** 401
+  **Content:** `{message :"Unauthorized!"}`
+  OR
+- **Code:** 400
+  **Content:** `{message :"Please fill all form!"}`
+
+```
+{
+    password : string
+}
+```
+
+# POST /merchant/
+
+---
+
+Create new merchant
+
+- **URL Params**  
+  Required: `name=string`
+- **Data Params**
+  ```
+    {
+        name:string,
+        password:string,
+        address:string,
+        phone_number:string
+    }
+  ```
+- **Headers**  
+  Content-Type: application/json  
+  Authorization: Bearer `<OAuth Token>`
+- **Success Response:**
+- **Code:** 201  
+  **Content:** `{message: "Success create new data!"}`
+
+# DELETE /merchant/:id
+
+---
+
+Delete specific merchant
+
+- **URL Params**  
+  Required: `id=int`
+- **Data Params**  
+  None
+- **Headers**  
+  Content-Type: application/json  
+  Authorization: Bearer `<OAuth Token>`
+- **Success Response:**
+- **Code:** 200  
+  **Content:**
+- **Error Respons:"**
+- **Code:** 401
+  **Content:** `{message :"Unauthorized!"}`
+  OR
+- **Code:** 200
+  **Content:** `{message :"Success deleting data!"}`

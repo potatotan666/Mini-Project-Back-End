@@ -32,7 +32,7 @@ class controllerMerchant {
       res.status(401).json({ message: "Unauthorized!" });
     } else {
       modelMerchant.deleteMerchant(req, res, next);
-      res.status(200).json({ message: "Success delete new data!" });
+      res.status(200).json({ message: "Success deleting data!" });
     }
   }
   static updateMerchantPassword(req, res, next) {
