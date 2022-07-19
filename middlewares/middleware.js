@@ -9,7 +9,7 @@ class middleware {
     const token = req.headers.authorization;
     let verifyToken = null;
     if (token) {
-      verifyToken = jwt.verify(token, "shhhhh");
+      verifyToken = jwt.verify(token, process.env.KEY);
       if (verifyToken) {
         next();
       }

@@ -9,7 +9,7 @@ class controllerProduct {
   }
   static PostNewProduct(req, res, next) {
     const body = req.body;
-    req.user = jwt.verify(req.headers.authorization, "shhhhh");
+    req.user = jwt.verify(req.headers.authorization, process.env.KEY);
     if (body.name == null) {
       res.status(400).json({ message: "Please fill all form!" });
     }
@@ -17,8 +17,8 @@ class controllerProduct {
     res.status(201).json({ message: "Success create new product!" });
   }
   static updateQuantity(req, res, next) {
-    req.user = jwt.verify(req.headers.authorization, "shhhhh");
-    if (req.user.user.id != req.params.id) {
+    req.user = jwt.verify(req.headers.authorization, process.env.KEY);
+    if (req.user.user.id != 1) {
       res.status(401).json({ message: "Unauthorized!" });
     } else {
       modelProduct.updateQuantity(req, res, next);
@@ -26,8 +26,8 @@ class controllerProduct {
     }
   }
   static updatePrice(req, res, next) {
-    req.user = jwt.verify(req.headers.authorization, "shhhhh");
-    if (req.user.user.id != req.params.id) {
+    req.user = jwt.verify(req.headers.authorization, process.env.KEY);
+    if (req.user.user.id != 1) {
       res.status(401).json({ message: "Unauthorized!" });
     } else {
       modelProduct.updatePrice(req, res, next);
@@ -35,7 +35,8 @@ class controllerProduct {
     }
   }
   static deleteProduct(req, res, next) {
-    req.user = jwt.verify(req.headers.authorization, "shhhhh");
+    const body = req.body;
+    req.user = jwt.verify(req.headers.authorization, process.env.KEY);
     if (req.user.user.id != 1) {
       res.status(401).json({ message: "Unauthorized!" });
     } else {

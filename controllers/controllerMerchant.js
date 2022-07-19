@@ -10,7 +10,7 @@ class controllerMerchant {
       body.password
     );
     if (user && user.length != 0) {
-      const token = jwt.sign({ user }, "shhhhh");
+      const token = jwt.sign({ user }, process.env.KEY);
       res.status(200).json({ token });
     } else {
       res.status(401).json({ message: "Unauthorized" });
@@ -27,7 +27,7 @@ class controllerMerchant {
     res.status(201).json({ message: "Success create new data!" });
   }
   static deleteMerchant(req, res, next) {
-    req.user = jwt.verify(req.headers.authorization, "shhhhh");
+    req.user = jwt.verify(req.headers.authorization, process.env.KEY);
     if (req.user.user.id != 1) {
       res.status(401).json({ message: "Unauthorized!" });
     } else {
@@ -36,7 +36,7 @@ class controllerMerchant {
     }
   }
   static updateMerchantPassword(req, res, next) {
-    req.user = jwt.verify(req.headers.authorization, "shhhhh");
+    req.user = jwt.verify(req.headers.authorization, process.env.KEY);
     if (req.user.user.id != req.params.id) {
       res.status(401).json({ message: "Unauthorized!" });
     } else {
