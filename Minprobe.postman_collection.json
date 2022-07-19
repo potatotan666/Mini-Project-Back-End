@@ -1,0 +1,397 @@
+{
+	"info": {
+		"_postman_id": "d11686ac-2613-4559-8a76-e39eed056c74",
+		"name": "Minprobe",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20446346"
+	},
+	"item": [
+		{
+			"name": "READ Merchant",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJuYW1lIjoiYWRtaW4iLCJwYXNzd29yZCI6ImFkbWluIiwiYWRkcmVzcyI6IkNpbGVnb24sQmFudGVuIiwiam9pbl9kYXRlIjoiMjAyMC0wNy0xNSIsInBob25lX251bWJlciI6Iis2MjgxMjM0NTY3ODkifSwiaWF0IjoxNjU4MjIwNDY0fQ.RWPO9O8WfWNjwL4wlo1mcgkHtXTarS34tFxDvJcqHCU",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/merchant/:id",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"merchant",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "admin"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "READ All Merchant Info",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJuYW1lIjoiYWRtaW4iLCJwYXNzd29yZCI6ImFkbWluIiwiYWRkcmVzcyI6IkNpbGVnb24sQmFudGVuIiwiam9pbl9kYXRlIjoiMjAyMC0wNy0xNSIsInBob25lX251bWJlciI6Iis2MjgxMjM0NTY3ODkifSwiaWF0IjoxNjU4MjIwNDY0fQ.RWPO9O8WfWNjwL4wlo1mcgkHtXTarS34tFxDvJcqHCU",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/merchant",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"merchant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Merchant Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"admin\",\r\n    \"password\":\"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/merchant/login",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"merchant",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE Merchant",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJuYW1lIjoiYWRtaW4iLCJwYXNzd29yZCI6ImFkbWluIiwiYWRkcmVzcyI6IkNpbGVnb24sQmFudGVuIiwiam9pbl9kYXRlIjoiMjAyMC0wNy0xNSIsInBob25lX251bWJlciI6Iis2MjgxMjM0NTY3ODkifSwiaWF0IjoxNjU4MjIwNDY0fQ.RWPO9O8WfWNjwL4wlo1mcgkHtXTarS34tFxDvJcqHCU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"tokodelete\",\r\n    \"password\":\"tokodelete\",\r\n    \"address\":\"Cilegon,Banten\",\r\n    \"phone_number\":\"+628123456789\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/merchant",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"merchant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE Merchant Password",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJuYW1lIjoiYWRtaW4iLCJwYXNzd29yZCI6ImFkbWluIiwiYWRkcmVzcyI6IkNpbGVnb24sQmFudGVuIiwiam9pbl9kYXRlIjoiMjAyMC0wNy0xNSIsInBob25lX251bWJlciI6Iis2MjgxMjM0NTY3ODkifSwiaWF0IjoxNjU4MjIwNDY0fQ.RWPO9O8WfWNjwL4wlo1mcgkHtXTarS34tFxDvJcqHCU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"password\":\"anjay123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/merchant/password/:id",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"merchant",
+						"password",
+						":id"
+					],
+					"query": [
+						{
+							"key": null,
+							"value": "password",
+							"disabled": true
+						},
+						{
+							"key": null,
+							"value": "",
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Merchant",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJuYW1lIjoiYWRtaW4iLCJwYXNzd29yZCI6ImFkbWluIiwiYWRkcmVzcyI6IkNpbGVnb24sQmFudGVuIiwiam9pbl9kYXRlIjoiMjAyMC0wNy0xNSIsInBob25lX251bWJlciI6Iis2MjgxMjM0NTY3ODkifSwiaWF0IjoxNjU4MjIwNDY0fQ.RWPO9O8WfWNjwL4wlo1mcgkHtXTarS34tFxDvJcqHCU",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/merchant/:id",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"merchant",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "READ Product",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJuYW1lIjoiYWRtaW4iLCJwYXNzd29yZCI6ImFkbWluIiwiYWRkcmVzcyI6IkNpbGVnb24sQmFudGVuIiwiam9pbl9kYXRlIjoiMjAyMC0wNy0xNSIsInBob25lX251bWJlciI6Iis2MjgxMjM0NTY3ODkifSwiaWF0IjoxNjU4MjIwNDY0fQ.RWPO9O8WfWNjwL4wlo1mcgkHtXTarS34tFxDvJcqHCU",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/product/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"product",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE Product",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJuYW1lIjoiYWRtaW4iLCJwYXNzd29yZCI6ImFkbWluIiwiYWRkcmVzcyI6IkNpbGVnb24sQmFudGVuIiwiam9pbl9kYXRlIjoiMjAyMC0wNy0xNSIsInBob25lX251bWJlciI6Iis2MjgxMjM0NTY3ODkifSwiaWF0IjoxNjU4MjIwNDY0fQ.RWPO9O8WfWNjwL4wlo1mcgkHtXTarS34tFxDvJcqHCU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Baju Remaja\",\r\n    \"quantity\":\"99\",\r\n    \"price\":\"Rp. 220.000\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/product",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE Products Quantity",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJuYW1lIjoiYWRtaW4iLCJwYXNzd29yZCI6ImFkbWluIiwiYWRkcmVzcyI6IkNpbGVnb24sQmFudGVuIiwiam9pbl9kYXRlIjoiMjAyMC0wNy0xNSIsInBob25lX251bWJlciI6Iis2MjgxMjM0NTY3ODkifSwiaWF0IjoxNjU4MjIwNDY0fQ.RWPO9O8WfWNjwL4wlo1mcgkHtXTarS34tFxDvJcqHCU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"quantity\":\"90\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/product/quantity/:id",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"product",
+						"quantity",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE Products Price",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJuYW1lIjoiYWRtaW4iLCJwYXNzd29yZCI6ImFkbWluIiwiYWRkcmVzcyI6IkNpbGVnb24sQmFudGVuIiwiam9pbl9kYXRlIjoiMjAyMC0wNy0xNSIsInBob25lX251bWJlciI6Iis2MjgxMjM0NTY3ODkifSwiaWF0IjoxNjU4MjIwNDY0fQ.RWPO9O8WfWNjwL4wlo1mcgkHtXTarS34tFxDvJcqHCU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"price\":\"Rp. 400.000\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/product/price/:id",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"product",
+						"price",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Product",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJuYW1lIjoiYWRtaW4iLCJwYXNzd29yZCI6ImFkbWluIiwiYWRkcmVzcyI6IkNpbGVnb24sQmFudGVuIiwiam9pbl9kYXRlIjoiMjAyMC0wNy0xNSIsInBob25lX251bWJlciI6Iis2MjgxMjM0NTY3ODkifSwiaWF0IjoxNjU4MjIwNDY0fQ.RWPO9O8WfWNjwL4wlo1mcgkHtXTarS34tFxDvJcqHCU",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/product/:id",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"product",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "localhost:3000",
+			"type": "string"
+		}
+	]
+}
