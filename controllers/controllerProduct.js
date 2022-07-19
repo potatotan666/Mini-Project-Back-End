@@ -1,3 +1,4 @@
+const jwt = require("jsonwebtoken");
 const modelProduct = require("../models/modelProduct");
 const Product = require("../models/modelProduct");
 
@@ -7,10 +8,12 @@ class controllerProduct {
   }
   static PostNewProduct(req, res, next) {
     const body = req.body;
+    const token = req.headers.authorization;
+    req.user = jwt.verify(token, "shhhhh");
     if (body.name == null) {
       res.status(400).json({ message: "Please fill all form!" });
     }
-    Product.postNewProducts(body);
+    Product.postNewProducts(req, body);
     res.status(201).json({ message: "Success create new product!" });
   }
   static updateQuantity(req, res, next) {

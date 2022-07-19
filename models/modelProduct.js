@@ -1,4 +1,5 @@
 const db = require("../config/db");
+const jwt = require("jsonwebtoken");
 
 class modelProduct {
   static getAllProducts(req, res, next) {
@@ -10,12 +11,20 @@ class modelProduct {
       res.status(200).json(row);
     });
   }
-  static postNewProducts(body) {
+  static postNewProducts(req, body) {
+    // req.user = jwt.verify(token, "shhhhh");
     const query =
-      "INSERT INTO product (name, quantity, price, created_by, updated_by) VALUES (?,?,?,?,?)";
+      "INSERT INTO product (merchant_id, name, quantity, price, created_by, updated_by) VALUES (?,?,?,?,?,?)";
     db.run(
       query,
-      [body.name, body.quantity, body.price, body.created_by, body.updated_by],
+      [
+        req.user.user.id,
+        body.name,
+        body.quantity,
+        body.price,
+        body.created_by,
+        body.updated_by,
+      ],
       function (err) {
         if (err) {
           // console.log(err);

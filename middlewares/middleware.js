@@ -6,7 +6,6 @@ class middleware {
     }
 
     const token = req.headers.authorization;
-    // const verifyHeaders =
     let verifyToken = null;
     if (token) {
       verifyToken = jwt.verify(token, "shhhhh");
@@ -15,6 +14,8 @@ class middleware {
       }
       // res.status(401).json({ message: "Unauthorized" });
     }
+    req.user = verifyToken;
+    // console.log(req.user.user.id);
     //
   }
 }
