@@ -2,6 +2,10 @@
 
 NodeJS, Express, JWT
 
+## Architecture Diagram
+
+![alt text](https://drive.google.com/file/d/1d03PmAuH7JsiFDLJePTLn_ri9EBJcssu/view)
+
 ## Api Contract
 
 #Merchant
