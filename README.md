@@ -6,6 +6,10 @@ NodeJS, Express, JWT
 
 ![alt text](https://i.ibb.co/2Mc1Wf9/Untitled-Diagram-drawio.png)
 
+## Entity Realtionship Diagram
+
+![alt text](https://i.ibb.co/XSdB75J/Untitled-Diagram-drawio-1.png)
+
 ## Api Contract
 
 #Merchant
