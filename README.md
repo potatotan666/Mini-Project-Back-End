@@ -41,7 +41,7 @@ Log in system using token as authorization key
 }
 ```
 
-# POST /merchant
+# GET /merchant
 
 ---
 
@@ -69,7 +69,7 @@ Return All Merchant in The System
 }
 ```
 
-# POST /merchant/:id
+# GET /merchant/:id
 
 ---
 
@@ -105,8 +105,14 @@ Updating merchant password
 
 - **URL Params**  
   Required: `id=int`
-- **Data Params**  
-  None
+- **Data Params**
+
+```
+    {
+        password : string
+    }
+```
+
 - **Headers**  
   Content-Type: application/json  
   Authorization: Bearer `<OAuth Token>`
@@ -119,12 +125,6 @@ Updating merchant password
   OR
 - **Code:** 400
   **Content:** `{message :"Please fill all form!"}`
-
-```
-{
-    password : string
-}
-```
 
 # POST /merchant/
 
@@ -172,3 +172,86 @@ Delete specific merchant
   OR
 - **Code:** 200
   **Content:** `{message :"Success deleting data!"}`
+
+#Product
+
+# GET /product/
+
+---
+
+Return specified merchant by name
+
+- **URL Params**  
+  None
+- **Data Params**  
+  None
+- **Headers**  
+  Content-Type: application/json  
+  Authorization: Bearer `<OAuth Token>`
+- **Success Response:**
+- **Code:** 200  
+  **Content:**
+
+```
+{
+    id : int
+    merchant_id : int
+    name : string
+    quantity : int
+    price : int
+    created_at : datetime
+    created_by : datetime
+    updated_at : datetime
+    updated_by : datetime
+}
+```
+
+# POST /product/
+
+---
+
+Create new product
+
+- **URL Params**  
+  None
+- **Data Params**
+  ```
+    {
+        name : string
+        quantity : int
+        price : int
+    }
+  ```
+- **Headers**  
+  Content-Type: application/json  
+  Authorization: Bearer `<OAuth Token>`
+- **Success Response:**
+- **Code:** 201  
+  **Content:** `{message: "Success create new data!"}`
+
+# PUT /product/price/:id
+
+---
+
+Updating merchant password
+
+- **URL Params**  
+  Required: `id=int`
+- **Data Params**
+  ```
+      {
+          price : int
+      }
+  ```
+- **Headers**  
+  Content-Type: application/json  
+  Authorization: Bearer `<OAuth Token>`
+- **Success Response:**
+- **Code:** 200  
+  **Content:**
+- **Error Respons:"**
+- **Code:** 401
+  **Content:** `{message :"Unauthorized!"}`
+  OR
+- **Code:** 400
+  **Content:** `{message :"Please fill all form!"}`
