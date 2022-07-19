@@ -4,7 +4,7 @@ NodeJS, Express, JWT
 
 ## Architecture Diagram
 
-![alt text](https://drive.google.com/file/d/1d03PmAuH7JsiFDLJePTLn_ri9EBJcssu/view)
+![alt text](https://i.ibb.co/2Mc1Wf9/Untitled-Diagram-drawio.png)
 
 ## Api Contract
 
