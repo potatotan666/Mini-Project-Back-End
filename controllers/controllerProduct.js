@@ -8,8 +8,7 @@ class controllerProduct {
   }
   static PostNewProduct(req, res, next) {
     const body = req.body;
-    const token = req.headers.authorization;
-    req.user = jwt.verify(token, "shhhhh");
+    req.user = jwt.verify(req.headers.authorization, "shhhhh");
     if (body.name == null) {
       res.status(400).json({ message: "Please fill all form!" });
     }

@@ -22,8 +22,8 @@ class modelProduct {
         body.name,
         body.quantity,
         body.price,
-        body.created_by,
-        body.updated_by,
+        req.user.user.name,
+        req.user.user.name,
       ],
       function (err) {
         if (err) {

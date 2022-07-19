@@ -29,16 +29,10 @@ class modelMerchant {
   static postMerchant(req, res, next) {
     const body = req.body;
     const query =
-      "INSERT INTO merchant (name, password, address, join_date, phone_number) VALUES (?,?,?,?,?)";
+      "INSERT INTO merchant (name, password, address,  phone_number) VALUES (?,?,?,?)";
     db.run(
       query,
-      [
-        body.name,
-        body.password,
-        body.address,
-        body.join_date,
-        body.phone_number,
-      ],
+      [body.name, body.password, body.address, body.phone_number],
       function (err) {
         if (err) {
           console.log(err);
@@ -56,13 +50,12 @@ class modelMerchant {
       }
     });
   }
-  static updateMerhantPassword(req, res, next) {
+  static updateMerchantPassword(req, res, next) {
     const queryGet = `SELECT * FROM merchant WHERE id = ?`;
     const query = `UPDATE merchant SET password = ? WHERE id = ?`;
     const userId = req.params.id;
     const body = req.body;
     db.all(queryGet, [userId], (err, result) => {
-      console.log(result);
       if (result.length == 0) {
         res.status(404).json({ message: "Data not found!" });
       }

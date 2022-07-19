@@ -27,11 +27,25 @@ class controllerMerchant {
     res.status(201).json({ message: "Success create new data!" });
   }
   static deleteMerchant(req, res, next) {
-    modelMerchant.deleteMerchant(req, res, next);
-    res.status(200).json({ message: "Success delete new data!" });
+    req.user = jwt.verify(req.headers.authorization, "shhhhh");
+    if (req.user.user.id != 1) {
+      res.status(401).json({ message: "Unauthorized!" });
+    } else {
+      modelMerchant.deleteMerchant(req, res, next);
+      res.status(200).json({ message: "Success delete new data!" });
+    }
   }
   static updateMerchantPassword(req, res, next) {
-    modelMerchant.updateMerchantPassword(req, res, next);
+    req.user = jwt.verify(req.headers.authorization, "shhhhh");
+    if (req.user.user.id != req.params.id) {
+      res.status(401).json({ message: "Unauthorized!" });
+    } else {
+      if (!req.body.password) {
+        res.status(400).json({ message: "Please fill all form!" });
+      } else {
+        modelMerchant.updateMerchantPassword(req, res, next);
+      }
+    }
   }
 }
 
