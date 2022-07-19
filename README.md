@@ -307,3 +307,4 @@ Delete specific merchant
   OR
 - **Code:** 200
   **Content:** `{message :"Success deleting data!"}`
+  .
