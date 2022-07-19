@@ -228,20 +228,22 @@ Create new product
 - **Success Response:**
 - **Code:** 201  
   **Content:** `{message: "Success create new data!"}`
+- **Code:** 400
+  **Content:** `{message :"Please fill all form!"}`
 
 # PUT /product/price/:id
 
 ---
 
-Updating merchant password
+Updating product price
 
 - **URL Params**  
   Required: `id=int`
 - **Data Params**
   ```
-      {
-          price : int
-      }
+    {
+        price : int
+    }
   ```
 - **Headers**  
   Content-Type: application/json  
@@ -253,5 +255,55 @@ Updating merchant password
 - **Code:** 401
   **Content:** `{message :"Unauthorized!"}`
   OR
-- **Code:** 400
-  **Content:** `{message :"Please fill all form!"}`
+- **Code:** 200
+  **Content:** `{message :"Success updating price!"}`
+
+  # PUT /product/quantity/:id
+
+---
+
+Updating product quantity
+
+- **URL Params**  
+  Required: `id=int`
+- **Data Params**
+  ```
+    {
+        quantity : int
+    }
+  ```
+- **Headers**  
+  Content-Type: application/json  
+  Authorization: Bearer `<OAuth Token>`
+- **Success Response:**
+- **Code:** 200  
+  **Content:**
+- **Error Respons:"**
+- **Code:** 401
+  **Content:** `{message :"Unauthorized!"}`
+  OR
+- **Code:** 200
+  **Content:** `{message :"Success updating price!"}`
+
+# DELETE /merchant/:id
+
+---
+
+Delete specific merchant
+
+- **URL Params**  
+  Required: `id=int`
+- **Data Params**  
+  None
+- **Headers**  
+  Content-Type: application/json  
+  Authorization: Bearer `<OAuth Token>`
+- **Success Response:**
+- **Code:** 200  
+  **Content:**
+- **Error Respons:"**
+- **Code:** 401
+  **Content:** `{message :"Unauthorized!"}`
+  OR
+- **Code:** 200
+  **Content:** `{message :"Success deleting data!"}`

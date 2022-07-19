@@ -2,8 +2,6 @@ const express = require("express");
 const router = express.Router();
 const controllerProduct = require("../controllers/controllerProduct");
 const middleware = require("../middlewares/middleware");
-const modelMerchant = require("../models/modelMerchant");
-const modelProduct = require("../models/modelProduct");
 
 // Get all products data
 router.get("/", middleware.checkAuth, controllerProduct.getAllProducts);

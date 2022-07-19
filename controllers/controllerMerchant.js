@@ -1,4 +1,3 @@
-const User = require("../models/modelMerchant");
 const jwt = require("jsonwebtoken");
 const modelMerchant = require("../models/modelMerchant");
 
